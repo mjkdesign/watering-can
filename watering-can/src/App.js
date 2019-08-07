@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import Home from './pages/Home/Home';
+import About from './pages/About/About';
+import SignUp from './pages/Sign-Up/signUp';
+import Nav from './components/Navbar';
+import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
-function App() {
+class App extends React.Component {
+
+  scrollTo() {
+    scroller.scrollTo('scroll-to-element', {
+      duration: 800,
+      delay: 0,
+      smooth: 'easeOutQuint'
+    })
+  }
+  render(){
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <Nav></Nav>
+      <Home></Home>
+      <About></About>
+      <SignUp></SignUp>
       </header>
     </div>
   );
+}
 }
 
 export default App;
