@@ -1,0 +1,36 @@
+.about{
+    padding-top: 50px;
+}
+.abtMain{
+    background-image: url('../../Images/planthero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 475px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    
+}
+
+.abtContainer{
+    
+    text-align: center;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.abtContainer > h2 {
+    margin-top: 60%;
+}
+
+.abtText {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    border-style: none solid solid solid;
+    border-width: 2px;
+    border-color: black;
+}

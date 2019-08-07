@@ -2,17 +2,27 @@
     width: 100%;
     height: 800px;
     background-image: urL('../../Images/landing_1920x1080_dark.jpg');
-    color: white;   
+    color: white; 
+
 }
 
 .homeContainer > h2 {
     text-align: center;
     font-size: 75px;
-    padding-top: 25%;
+    padding-top: 16%;
+    font-family: 'Libre Baskerville', serif;
 }
 
-.homeText {
-    color:white;
-    text-align: center;
-
+.homeContainer > p {
+    text-align: justify;
+    width: 50%;
+    margin-left: 19.5rem;
+    display: block;
 }
+
+.homeContainer > button {
+  display: block;
+  max-width: 300px;
+  margin: auto;
+}
+

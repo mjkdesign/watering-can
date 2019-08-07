@@ -1,10 +1,13 @@
 import React from "react";
+import "./Navbar.css";
+import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
 
 function Nav(props) {
 
   return(
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<div className="navContainer">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     
 
@@ -31,7 +34,9 @@ function Nav(props) {
       <div class="navbar-item">
         <div class="buttons">
           <a class="button is-primary">
+          <Link activeClass="active" clasName="signUp" to="signUp" spy={true} smooth={true} duration={500}>
             <strong>Sign up</strong>
+          </Link>
           </a>
           <a class="button is-light">
             Log in
@@ -40,6 +45,7 @@ function Nav(props) {
       </div>
     </div>
   </nav>
+  </div>
 
   )
 };
