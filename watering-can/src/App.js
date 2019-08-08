@@ -1,12 +1,31 @@
-import React, { Component } from 'react';
-import './App.css';
-import Youtube from "./components/Youtube";  
+import React, {Component} from 'react';
+import Home from './pages/Home/Home';
+import About from './pages/About/About';
+import SignUp from './pages/Sign-Up/signUp';
+import Nav from './components/Navbar';
+import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
-function App() {
+class App extends React.Component {
+
+  scrollTo() {
+    scroller.scrollTo('scroll-to-element', {
+      duration: 800,
+      delay: 0,
+      smooth: 'easeOutQuint'
+    })
+  }
+  render(){
   return (
-    
-    <Youtube />
+    <div className="App">
+      <header className="App-header">
+      <Nav></Nav>
+      <Home></Home>
+      <About></About>
+      <SignUp></SignUp>
+      </header>
+    </div>
   );
+}
 }
 
 export default App;
