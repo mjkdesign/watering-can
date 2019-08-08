@@ -1,10 +1,12 @@
-import React from "react";
+import React, {Component} from "react";
 import "./signUp.css";
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
 
-function SignUp(props) {
+class SignUp extends Component {
+    render() {
 
+    
     return(
         <Element name="signUp" className="container signUp" >
         <div className="row">
@@ -49,6 +51,7 @@ function SignUp(props) {
         </div>
         </Element>
     )
+    }
 };
 
 export default SignUp
