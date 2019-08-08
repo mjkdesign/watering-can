@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import SignUp from './pages/Sign-Up/signUp';
-import Nav from './components/Navbar';
+import Nav from './components/Navbar/Navbar';
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
 class App extends React.Component {

@@ -1,11 +1,11 @@
-import React from "react";
+import React, {Component} from "react";
 import "./About.css";
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import Plant from '../../Images/gifting-bottom-banner.jpg';
 
 
-function About(props) {
-
+class About extends Component {
+    render() {
     return(
         <div>
         <Element name="about" className="container about" >
@@ -23,6 +23,7 @@ function About(props) {
         <img className="platHero" src={Plant}></img>
         </div>
     )
+    }
 };
 
 export default About
