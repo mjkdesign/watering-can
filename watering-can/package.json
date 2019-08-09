@@ -3,14 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-=======
     "bulma": "^0.7.5",
     "config": "^3.2.2",
     "cors": "^2.8.5",
     "i": "^0.3.6",
     "mongoose": "^5.6.8",
->>>>>>> 8a55b2347e01b1aab59ac8b221d6b70e87f00c46
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
