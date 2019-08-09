@@ -1,18 +1,29 @@
 const mongoose = require('mongoose');
 const express = require('express');
-var cors = require('cors');
-const path = require("path");
+const cors = require('cors');
+const logger = require("morgan");
 const app = express();
 app.use(cors());
 
 
+app.use(logger("dev"));
+
+const db = require("./models");
+
+const plantSeed = require("./scripts/seedDB");
 
 mongoose 
-    .connect(process.env.MONGODB_URI || "mongodb://localhost/")
+    .connect(process.env.MONGODB_URI || "mongodb://localhost/Houseplants")
 
-        app.get("*", (req, res) => {
-            res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-        });
+    db.Plant.create(plantSeed)
+  .then(function(dbPlant) {
+    console.log(dbPlant);
+  })
+  .catch(function(err) {
+    console.log(err.message);
+  });
+
+
     
 
     const port = process.env.PORT || 3001;

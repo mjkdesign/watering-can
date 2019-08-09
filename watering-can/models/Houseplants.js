@@ -10,12 +10,9 @@ const PlantSchema = new Schema({
 
     water: { type: String, required: true },
 
-    temperature: Number,
+    temperature: { type: Number, required: false },
 
-    user: {
-        name: String,
-        status: String
-    },
+    image: { type: String, required: true },
     date: { type: Date, default: Date.now }
 });
 
