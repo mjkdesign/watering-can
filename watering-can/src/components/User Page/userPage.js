@@ -11,7 +11,12 @@ class userPage extends Component {
             <div className="row">
 
                 <div className="col s3">
+                    <div className="plantContainer">
                     {/* Plants listed by id (display name and image) */}
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div className="col s9">
