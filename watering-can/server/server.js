@@ -11,9 +11,9 @@ app.use(cors());
 
 app.use(logger("dev"));
 
-const db = require("./models");
+const db = require("../models");
 
-const plantSeed = require("./scripts/seedDB");
+const plantSeed = require("../scripts/seedDB");
 
 mongoose 
     .connect(process.env.MONGODB_URI || "mongodb://localhost/Houseplants")
