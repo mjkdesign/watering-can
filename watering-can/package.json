@@ -3,11 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
+=======
+    "axios": "^0.19.0",
+<<<<<<< HEAD
+=======
+    "body-parser": "^1.19.0",
+>>>>>>> master
+>>>>>>> master
     "bulma": "^0.7.5",
     "config": "^3.2.2",
     "cors": "^2.8.5",
     "i": "^0.3.6",
+    "logger": "0.0.1",
     "mongoose": "^5.6.8",
+<<<<<<< HEAD
+=======
+    "morgan": "^1.9.1",
+>>>>>>> master
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
@@ -39,5 +52,6 @@
   "main": "App.js",
   "devDependencies": {},
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "proxy": "http://localhost:8080"
 }
