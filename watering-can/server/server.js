@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const path = require("path");
 const app = express();
-const morgan = require('morgan');
+const logger = require('morgan');
 const bodyParser = require('body-parser');
 const axios = require('axios');
 const dbConnection = require('./database')
@@ -13,13 +13,24 @@ app.use('/user', user)
 
 app.use(cors());
 
+app.use(logger("dev"));
+
+const db = require("./models");
+
+const plantSeed = require("./scripts/seedDB");
 
 mongoose 
-    .connect(process.env.MONGODB_URI || "mongodb://localhost/")
+    .connect(process.env.MONGODB_URI || "mongodb://localhost/Houseplants")
 
-        app.get("*", (req, res) => {
-            res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-        });
+    db.Plant.create(plantSeed)
+  .then(function(dbPlant) {
+    console.log(dbPlant);
+  })
+  .catch(function(err) {
+    console.log(err.message);
+  });
+
+
     
 
     const port = process.env.PORT || 3001;

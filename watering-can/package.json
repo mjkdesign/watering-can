@@ -4,11 +4,15 @@
   "private": true,
   "dependencies": {
     "axios": "^0.19.0",
+<<<<<<< HEAD
+=======
     "body-parser": "^1.19.0",
+>>>>>>> master
     "bulma": "^0.7.5",
     "config": "^3.2.2",
     "cors": "^2.8.5",
     "i": "^0.3.6",
+    "logger": "0.0.1",
     "mongoose": "^5.6.8",
     "morgan": "^1.9.1",
     "react": "^16.8.6",
