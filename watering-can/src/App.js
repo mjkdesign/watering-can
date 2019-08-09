@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
-import SignUp from './pages/Sign-Up/signUp';
+import SignUp from './components/Sign-Up/signUp.js';
 import Nav from './components/Navbar/Navbar';
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
