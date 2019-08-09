@@ -6,6 +6,10 @@ const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const axios = require('axios');
+const dbConnection = require('./database')
+const user = require('./routes/user')
+
+app.use('/user', user)
 
 app.use(cors());
 
