@@ -1,10 +1,10 @@
-import React from "react";
+import React, {Component} from "react";
 import "./Navbar.css";
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
 
-function Nav(props) {
-
+class Nav extends Component {
+  render() {
   return(
 
 <div class="navbar-fixed">
@@ -21,6 +21,7 @@ function Nav(props) {
 
 
   )
+  }
 };
 
 export default Nav

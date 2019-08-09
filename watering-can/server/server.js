@@ -1,10 +1,13 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const cors = require('cors');
-const logger = require("morgan");
+const path = require("path");
 const app = express();
-app.use(cors());
+const logger = require('morgan');
+const bodyParser = require('body-parser');
+const axios = require('axios');
 
+app.use(cors());
 
 app.use(logger("dev"));
 
@@ -29,3 +32,4 @@ mongoose
     const port = process.env.PORT || 3001;
 
     app.listen(port, () => console.log(`Server starting on port ${port}`));
+
