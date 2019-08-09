@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
     "bulma": "^0.7.5",
     "config": "^3.2.2",
     "cors": "^2.8.5",
     "i": "^0.3.6",
     "mongoose": "^5.6.8",
+    "morgan": "^1.9.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
@@ -39,5 +42,6 @@
   "main": "App.js",
   "devDependencies": {},
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "proxy": "http://localhost:8080"
 }
