@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./signUp.css";
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import Axios from "axios";
 

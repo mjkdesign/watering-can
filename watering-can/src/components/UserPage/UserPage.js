@@ -1,9 +1,27 @@
 import React, {Component} from "react";
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
+import API from "../../utils/API"
 import "./userPage.css";
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
 
-class userPage extends Component {
+class UserPage extends Component {
+
+    state = {
+        plants: []
+    };
+
+    componentDidMount() {
+        this.loadPlants();
+    }
+
+    loadPlants = () => {
+        API.getPlants()
+        .then(res =>
+            this.setState({ plants: res })
+            )
+            console.log(`State: ${this.state}`)
+    }
 
     render() {
         return(
@@ -37,4 +55,4 @@ class userPage extends Component {
     }
 };
 
-export default userPage
+export default UserPage

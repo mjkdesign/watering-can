@@ -4,6 +4,7 @@ import About from './pages/About/About';
 import SignUp from './components/Sign-Up/signUp.js';
 import Nav from './components/Navbar/Navbar';
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import UserPage from './components/UserPage/UserPage';
 
 class App extends React.Component {
 
@@ -22,6 +23,7 @@ class App extends React.Component {
       <Home></Home>
       <About></About>
       <SignUp></SignUp>
+      <UserPage></UserPage>
       </header>
     </div>
   );

@@ -11,4 +11,7 @@ router
     .put(plantsController.update)
     .delete(plantsController.remove);
 
+router.route("/api/plants")
+    .get(plantsController.findAll)
+    .post(plantsController.create);
 module.exports = router;
