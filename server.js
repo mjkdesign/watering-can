@@ -6,10 +6,10 @@ const app = express();
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const axios = require('axios');
-const dbConnection = require('./database');
+const dbConnection = require('./server/database');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session)
-const passport = require('./passport');
+const passport = require('./server/passport');
 
 const PORT = process.env.PORT || 3001;
 

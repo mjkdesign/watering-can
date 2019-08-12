@@ -1,46 +1,52 @@
 import React, { Component } from "react";
 import "./signUp.css";
-import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import { DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import { Route, Link, Redirect, BrowserRouter as Router, Switch } from 'react-router-dom'
 import Axios from "axios";
+import Login from "../../pages/login/login";
 
 
 
 class SignUp extends Component {
 
-  state = {
-    
-    userName: "",
-    password: "",
-    // email: ""
-  }
+  constructor() {
+		super()
+		this.state = {
+			username: '',
+			password: '',
+			
 
-  handleInputChange = event => {
-    let value = event.target.value;
-    const name = event.target.name;
+		}
+		this.handleSubmit = this.handleSubmit.bind(this)
+		this.handleChange = this.handleChange.bind(this)
+	}
 
+  handleChange(event) {
     this.setState({
-      [name]: value
-    });
-  }
+        [event.target.name]: event.target.value
+    })
+}
+
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log('creating new user: ', this.state.userName);
+    console.log('creating new user: ', this.state.username);
 
-    Axios.post('/user', {
-      username: this.state.userName,
+    Axios.post('/user/', {
+      username: this.state.username,
       password: this.state.password,
-      // email: this.state.email
+      
     })
     .then(response => {
       console.log(response)
-      if (response.data) {
+      if (!response.data.errmsg) {
         console.log('successful signup')
-        this.setState({
-          redirectTo: '/login'
-        })
+        // this.setState({
+        //   redirectTo: '/login'
+        // })
+        
       } else {
-        console.log('Sign-Up error')
+        console.log('username already taken')
       }
     }).catch(error => {
       console.log('Sign up server error: ')
@@ -73,8 +79,8 @@ class SignUp extends Component {
     <form class="col s12" action="/signup" method="post">
       <div class="row">
         <div class="input-field col s12">
-          <input name="userName" type="text" class="validate" value={this.state.userName} onChange={this.handleInputChange}/>
-          <label for="userName">User Name</label>
+          <input name="username" type="text" class="validate" value={this.state.username} onChange={this.handleChange}/>
+          <label for="username">User Name</label>
         </div>
         {/* <div class="input-field col s6">
           <input name="lastName" type="text" class="validate" value={this.state.lastName} onChange={this.handleInputChange}/>
@@ -85,7 +91,7 @@ class SignUp extends Component {
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input name="password" type="password" class="validate" value={this.state.password} onChange={this.handleInputChange}/>
+          <input name="password" type="password" class="validate" value={this.state.password} onChange={this.handleChange}/>
           <label for="password">Password</label>
         </div>
       </div>
@@ -97,13 +103,15 @@ class SignUp extends Component {
       </div> */}
       <div class="row">
         <div class="col s12">
-            <a class="waves-effect waves-light teal darken-3 btn" href="/profile" onClick={this.handleSubmit}>submit</a>
+            {/* <a class="waves-effect waves-light teal darken-3 btn" href="/login" onClick={this.handleSubmit}>submit</a> */}
+            <Link to="/login" className="submit" onClick={this.handleSubmit}>submit</Link>
         </div>
       </div>
     </form>
   </div>
             </div>
         </div>
+        <Route path="/login" component={Login} /> 
         </Element>
     );
   }

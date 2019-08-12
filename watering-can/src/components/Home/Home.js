@@ -1,11 +1,14 @@
-import React from "react";
+import React, {Component} from 'react';
 import "./Home.css";
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
 
-function Home(props) {
+class Home extends Component {
+
+    render() {
 
     return(
+        
         <div className='row'>
             <div className='homeContainer'>
             <h2> Welcome to Water Can </h2>
@@ -15,6 +18,7 @@ function Home(props) {
             </div>
         </div>
     )
+    }
 };
 
 export default Home

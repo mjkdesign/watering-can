@@ -13,11 +13,11 @@ class Homepage extends Component {
           <div className="App">
             <header className="App-header">
             
-            <Home></Home>
-            <About></About>
-            <SignUp></SignUp>
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
+            <Home />
+            <About />
+            <SignUp />
+            {/* <Route exact path="/" component={Home} /> */}
+            {/* <Route path="/about" component={About} /> */}
             <Route path="/login" component={Login} /> 
             <Route path="/profile" component={Profile} />
             </header>

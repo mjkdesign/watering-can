@@ -1,34 +1,39 @@
 import React, { Component } from "react";
 // import "./signUp.css";
-import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import { DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import { Route, Link, Redirect, BrowserRouter as Router, Switch } from 'react-router-dom'
+
 import Axios from "axios";
 
 
 
 class LoginForm extends Component {
 
-  state = {
-    
-    userName: "",
-    password: "",
-    // email: ""
-  }
+  constructor() {
+    super()
+    this.state = {
+        username: '',
+        password: '',
+        redirectTo: null
+    }
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
 
-  handleInputChange = event => {
-    let value = event.target.value;
-    const name = event.target.name;
+}
 
-    this.setState({
-      [name]: value
-    });
-  }
+handleChange(event) {
+  this.setState({
+      [event.target.name]: event.target.value
+  })
+}
+
 
   handleSubmit = event => {
     event.preventDefault();
     console.log('Attempting to login');
 
     Axios.post('/user/login', {
-      username: this.state.userName,
+      username: this.state.username,
       password: this.state.password,
       // email: this.state.email
     })
@@ -37,7 +42,7 @@ class LoginForm extends Component {
       if (response.status === 200) {
         this.props.updateUser({
             loggedIn: true,
-            username: response.data.userName
+            username: response.data.username
         })
         this.setState({
             redirectTo:'/'
@@ -73,8 +78,8 @@ class LoginForm extends Component {
     <form class="col s12" action="/signup" method="post">
       <div class="row">
         <div class="input-field col s12">
-          <input name="userName" type="text" class="validate" value={this.state.userName} onChange={this.handleInputChange}/>
-          <label for="userName">User Name</label>
+          <input name="username" type="text" class="validate" value={this.state.username} onChange={this.handleChange}/>
+          <label for="username">User Name</label>
         </div>
         {/* <div class="input-field col s6">
           <input name="lastName" type="text" class="validate" value={this.state.lastName} onChange={this.handleInputChange}/>
@@ -85,7 +90,7 @@ class LoginForm extends Component {
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input name="password" type="password" class="validate" value={this.state.password} onChange={this.handleInputChange}/>
+          <input name="password" type="password" class="validate" value={this.state.password} onChange={this.handleChange}/>
           <label for="password">Password</label>
         </div>
       </div>
