@@ -13,8 +13,9 @@ class UserPage extends Component {
                 <div className="col s3">
                     <div className="plantContainer">
                     {/* Plants listed by id (display name and image) */}
+                        <h3>Plants</h3>
                         <ul>
-                            <li></li>
+                            <li>Hello</li>
                         </ul>
                     </div>
                 </div>
