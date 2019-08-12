@@ -6,10 +6,13 @@ const app = express();
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const axios = require('axios');
+const proxy = require("http-proxy-middleware");
 
 app.use(cors());
 
 app.use(logger("dev"));
+
+app.use('/api/plants', proxy({ target: "http://localhost:3001/", changeOrigin: true }));
 
 const db = require("../models");
 
