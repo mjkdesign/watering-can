@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import "./signUp.css";
+// import "./signUp.css";
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import Axios from "axios";
 
 
 
-class SignUp extends Component {
+class LoginForm extends Component {
 
   state = {
     
@@ -25,28 +25,28 @@ class SignUp extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log('creating new user: ', this.state.userName);
+    console.log('Attempting to login');
 
-    Axios.post('/user', {
+    Axios.post('/user/login', {
       username: this.state.userName,
       password: this.state.password,
       // email: this.state.email
     })
     .then(response => {
-      console.log(response)
-      if (response.data) {
-        console.log('successful signup')
-        this.setState({
-          redirectTo: '/login'
+      console.log('login response: ' + response)
+      if (response.status === 200) {
+        this.props.updateUser({
+            loggedIn: true,
+            username: response.data.userName
         })
-      } else {
-        console.log('Sign-Up error')
-      }
+        this.setState({
+            redirectTo:'/'
+        })
+    }
     }).catch(error => {
       console.log('Sign up server error: ')
       console.log(error);
     })
-
   }
 
 
@@ -59,7 +59,7 @@ class SignUp extends Component {
         <Element name="signUp" className="container signUp" >
         <div className="row">
             <div className="suContainer">
-                <h2 className="subtitle is-1 has-text-black col s12"> Sign Up! </h2>
+                <h2 className="subtitle is-1 has-text-black col s12"> Login </h2>
             </div>
             <div>
             <div class="row">
@@ -109,4 +109,4 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp;
+export default LoginForm;
