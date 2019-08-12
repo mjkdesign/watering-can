@@ -24,6 +24,7 @@ class App extends React.Component {
       <About></About>
       <SignUp></SignUp>
       <UserPage></UserPage>
+      
       </header>
     </div>
   );
