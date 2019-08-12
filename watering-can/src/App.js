@@ -4,11 +4,19 @@ import About from './components/About/About';
 import SignUp from './components/Sign-Up/signUp.js';
 import Login from './pages/login/login.js';
 import Nav from './components/Navbar/Navbar';
+<<<<<<< HEAD
 import Profile from './pages/profile/profile';
 import axios from 'axios';
 // duplicate link property
 import { DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import { Route, Link, Redirect, BrowserRouter as Router, Switch } from 'react-router-dom'
+=======
+import UserPage from './components/UserPage/UserPage';
+import ReactDOM from 'react-dom';
+import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import{Route, NavLink, BrowserRouter} from "react-router-dom";
+
+>>>>>>> master
 
 class App extends React.Component {
 
@@ -62,18 +70,25 @@ class App extends React.Component {
   }
   render(){
   return (
+    <BrowserRouter>
     <div className="App">
       <header className="App-header">
       <Nav></Nav>
       {/* <Home></Home>
       <About></About>
+<<<<<<< HEAD
       <SignUp></SignUp> */}
       <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/login" component={Login} /> 
       <Route path="/profile" component={Profile} />
+=======
+      <SignUp></SignUp>
+      <UserPage></UserPage>
+>>>>>>> master
       </header>
     </div>
+    </BrowserRouter>
   );
 }
 }
