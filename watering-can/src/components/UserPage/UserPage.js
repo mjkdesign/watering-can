@@ -3,7 +3,7 @@ import "./userPage.css";
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
 
-class userPage extends Component {
+class UserPage extends Component {
 
     render() {
         return(
@@ -13,8 +13,9 @@ class userPage extends Component {
                 <div className="col s3">
                     <div className="plantContainer">
                     {/* Plants listed by id (display name and image) */}
+                        <h3>Plants</h3>
                         <ul>
-                            <li></li>
+                            <li>Hello</li>
                         </ul>
                     </div>
                 </div>
@@ -37,4 +38,4 @@ class userPage extends Component {
     }
 };
 
-export default userPage
+export default UserPage

@@ -1,25 +1,25 @@
 import React, {Component} from "react";
 import "./Navbar.css";
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
-
+import UserPage from "../UserPage/UserPage"
+import{Route, NavLink, BrowserRouter, Switch} from "react-router-dom";
+import Logo from '../../Images/logo.png'
 
 class Nav extends Component {
   render() {
   return(
 
-<div class="navbar-fixed">
-    <nav class='white'>
-      <div class="nav-wrapper">
-        <a href="#!" class="brand-logo black-text">Water Can</a>
-        <ul className="right hide-on-med-and-down">
-          <li><Link activeClass="active" className="signUp" to="signUp" spy={true} smooth={true} duration={500}>Sign Up</Link></li>
-          <li><a href="badges.html">Login</a></li>
-        </ul>
-      </div>
-    </nav>
+<nav className="navbar">
+
+    <img className="logo" src={Logo}></img>
+  <div className="menu">
+    <ul>
+        <li><Link activeClass="active" className="navSignUp" to="signUp" spy={true} smooth={true} duration={500}>Sign Up</Link></li>
+        <li> Login </li>
+    </ul>
   </div>
-
-
+</nav>
+  
   )
   }
 };
