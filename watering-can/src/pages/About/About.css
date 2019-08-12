@@ -39,7 +39,7 @@
     justify-content: center;
     width: 80%;
     margin: 0 auto;
-    
+    line-height: 40px;
     border-width: 2px;
     border-color: black;
 }

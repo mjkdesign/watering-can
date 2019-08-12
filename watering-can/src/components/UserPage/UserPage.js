@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
-import API from "../../utils/API"
+import API from "../../utils/API";
 import "./userPage.css";
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
@@ -13,26 +13,31 @@ class UserPage extends Component {
 
     componentDidMount() {
         this.loadPlants();
-    }
+    };
 
     loadPlants = () => {
         API.getPlants()
+        // fetch("http://localhost:3001/api/plants")
         .then(res =>
-            this.setState({ plants: res })
+            this.setState({ plants: res.json })
             )
             console.log(`State: ${this.state}`)
-    }
+    };
+
+    
+
 
     render() {
+        console.log(this.state)
         return(
         <div>
             <div className="row">
 
                 <div className="col s3">
                     <div className="plantContainer">
-                    {/* Plants listed by id (display name and image) */}
+                        <h3>Plants</h3>
                         <ul>
-                            <li></li>
+                            <li>Hello</li>
                         </ul>
                     </div>
                 </div>

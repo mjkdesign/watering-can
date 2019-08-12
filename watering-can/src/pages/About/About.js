@@ -12,7 +12,7 @@ class About extends Component {
         <div className='row'>
             <div className='abtMain'>
                 <div className='abtContainer'>
-                    <h2 class="subtitle is-1 has-text-black col s12 pull-s3"> About Watering Can</h2>
+                    <h2 className="subtitle is-1 has-text-black col s12 pull-s3"> About Watering Can</h2>
                 </div>
             </div>
             <div className='abtText col s12 pull-s1'>

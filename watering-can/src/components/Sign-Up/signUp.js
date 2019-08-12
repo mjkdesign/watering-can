@@ -74,7 +74,7 @@ class SignUp extends Component {
     <form class="col s12" action="/signup" method="post">
       <div class="row">
         <div class="input-field col s12">
-          <input name="userName" type="text" class="validate" value={this.state.userName} onChange={this.handleInputChange}/>
+          <input name="userName" type="text" className="validate" value={this.state.userName} onChange={this.handleInputChange}/>
           <label for="userName">User Name</label>
         </div>
         {/* <div class="input-field col s6">
