@@ -1,0 +1,34 @@
+{
+  "name": "watering-can",
+  "version": "1.0.0",
+  "description": "An app for creating the ideal house plant watering schedule based on the available light in your house.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node scripts/seedDB.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hausuwu/watering-can.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hausuwu/watering-can/issues"
+  },
+  "homepage": "https://github.com/hausuwu/watering-can#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "connect-mongo": "^3.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "mongoose": "^5.6.9",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "path": "^0.12.7"
+  }
+}
