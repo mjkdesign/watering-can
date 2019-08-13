@@ -1,14 +1,9 @@
 import React, {Component} from "react";
 import "./Navbar.css";
-<<<<<<< HEAD
-import { Route, Link, Redirect, BrowserRouter as Router, Switch } from 'react-router-dom'
-import axios from 'axios'
-=======
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import UserPage from "../UserPage/UserPage"
 import{Route, NavLink, BrowserRouter, Switch} from "react-router-dom";
 import Logo from '../../Images/logo.png'
->>>>>>> master
 
 class Nav extends Component {
 
@@ -36,7 +31,6 @@ class Nav extends Component {
   render() {
   return(
 
-<<<<<<< HEAD
 <div class="navbar-fixed">
     <nav class='white'>
       <div class="nav-wrapper">
@@ -49,10 +43,7 @@ class Nav extends Component {
     </nav>
   </div>
 
-=======
-<nav className="navbar">
->>>>>>> master
-
+  <nav>
     <img className="logo" src={Logo}></img>
   <div className="menu">
     <ul>

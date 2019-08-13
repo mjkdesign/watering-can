@@ -14,7 +14,7 @@ const passport = require('./server/passport');
 const PORT = process.env.PORT || 3001;
 
 // ROUTE REQUIRES
-const user = require('./routes/user');
+const user = require("./server/routes/user");
 
 // MIDDLEWARE
 app.use(logger('dev'))
@@ -45,19 +45,19 @@ app.use(passport.session()) // calls the deserializeUser
 app.use('/user', user)
 
 
-// const db = require("./models");
-// const plantSeed = require("./scripts/seedDB");
+const db = require("./models");
+const plantSeed = require("./scripts/seedDB");
 
-// mongoose 
-//     .connect(process.env.MONGODB_URI || "mongodb://localhost/Houseplants")
+mongoose 
+    .connect(process.env.MONGODB_URI || "mongodb://localhost/Houseplants")
 
-//     db.Plant.create(plantSeed)
-//   .then(function(dbPlant) {
-//     console.log(dbPlant);
-//   })
-//   .catch(function(err) {
-//     console.log(err.message);
-// });
+    db.Plant.create(plantSeed)
+  .then(function(dbPlant) {
+    console.log(dbPlant);
+  })
+  .catch(function(err) {
+    console.log(err.message);
+});
 
 
 // START SERVER
