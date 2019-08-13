@@ -7,18 +7,20 @@
     "body-parser": "^1.19.0",
     "bulma": "^0.7.5",
     "config": "^3.2.2",
+    "connect-mongo": "^3.0.0",
     "cors": "^2.8.5",
     "http-proxy-middleware": "^0.19.1",
     "i": "^0.3.6",
     "logger": "0.0.1",
     "mongoose": "^5.6.8",
     "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
-    "react-scroll": "^1.7.12",
-    "yarn": "^1.17.3"
+    "react-scroll": "^1.7.12"
   },
   "scripts": {
     "start": "react-scripts start",
